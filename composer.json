@@ -1,0 +1,54 @@
+{
+    "name": "marcostmunhoz/laravel-seeder-extended",
+    "description": "Adds some useful features to Laravel Seeders.",
+    "keywords": [
+        "marcostmunhoz",
+        "laravel-seeder-extended"
+    ],
+    "homepage": "https://github.com/marcostmunhoz/laravel-seeder-extended",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Marcos T Munhoz",
+            "email": "marmunhoz414@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marcostmunhoz\\LaravelSeederExtended\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Marcostmunhoz\\LaravelSeederExtended\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marcostmunhoz\\LaravelSeederExtended\\LaravelSeederExtendedServiceProvider"
+            ],
+            "aliases": {
+                "LaravelSeederExtended": "Marcostmunhoz\\LaravelSeederExtended\\LaravelSeederExtendedFacade"
+            }
+        }
+    }
+}
