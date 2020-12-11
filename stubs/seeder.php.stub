@@ -1,0 +1,28 @@
+<?php
+
+namespace DummyNamespace;
+
+use MarcosTMunhoz\LaravelSeederExtended\Seeders\AbstractSeeder;
+
+class DummyClass extends AbstractSeeder
+{
+    /**
+     * Determines whether the seeder should run only once.
+     *
+     * @return bool
+     */
+    public function once()
+    {
+        return true;
+    }
+
+    /**
+     * Runs the seeder.
+     *
+     * @return void
+     */
+    public function seed()
+    {
+        // put your seeding logic here
+    }
+}

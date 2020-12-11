@@ -1,6 +1,6 @@
 <?php
 
-namespace Marcostmunhoz\LaravelSeederExtended;
+namespace MarcosTMunhoz\LaravelSeederExtended;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -14,33 +14,23 @@ class LaravelSeederExtendedServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-seeder-extended');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-seeder-extended');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
+            // publishes the configuration file
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('laravel-seeder-extended.php'),
+                __DIR__.'/../config/config.php' => config_path('seeder.php'),
             ], 'config');
 
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-seeder-extended'),
-            ], 'views');*/
-
-            // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/laravel-seeder-extended'),
-            ], 'assets');*/
-
-            // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-seeder-extended'),
-            ], 'lang');*/
+            // publishes the stubs files
+            $this->publishes([
+                __DIR__.'/../stubs' => base_path('stubs'),
+            ], 'stubs');
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                Commands\MakeSeederCommand::class,
+            ]);
         }
     }
 
@@ -50,11 +40,6 @@ class LaravelSeederExtendedServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-seeder-extended');
-
-        // Register the main class to use with the facade
-        $this->app->singleton('laravel-seeder-extended', function () {
-            return new LaravelSeederExtended;
-        });
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'seeder');
     }
 }

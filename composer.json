@@ -3,7 +3,10 @@
     "description": "Adds some useful features to Laravel Seeders.",
     "keywords": [
         "marcostmunhoz",
-        "laravel-seeder-extended"
+        "laravel-seeder-extended",
+        "laravel",
+        "seeder",
+        "database"
     ],
     "homepage": "https://github.com/marcostmunhoz/laravel-seeder-extended",
     "license": "MIT",
@@ -16,8 +19,9 @@
         }
     ],
     "require": {
-        "php": "^7.1",
-        "illuminate/support": "^6.0"
+        "php": "^7.1|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0",
+        "illuminate/database": "^6.0|^7.0|^8.0"
     },
     "require-dev": {
         "orchestra/testbench": "^4.0",
@@ -25,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Marcostmunhoz\\LaravelSeederExtended\\": "src"
+            "MarcosTMunhoz\\LaravelSeederExtended\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Marcostmunhoz\\LaravelSeederExtended\\Tests\\": "tests"
+            "MarcosTMunhoz\\LaravelSeederExtended\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +48,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Marcostmunhoz\\LaravelSeederExtended\\LaravelSeederExtendedServiceProvider"
+                "MarcosTMunhoz\\LaravelSeederExtended\\LaravelSeederExtendedServiceProvider"
             ],
             "aliases": {
-                "LaravelSeederExtended": "Marcostmunhoz\\LaravelSeederExtended\\LaravelSeederExtendedFacade"
+                "LaravelSeederExtended": "MarcosTMunhoz\\LaravelSeederExtended\\LaravelSeederExtendedFacade"
             }
         }
     }
